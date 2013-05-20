@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		533FEF6F174AC6D70016F4DF /* sock_ntop_host.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF6E174AC6D70016F4DF /* sock_ntop_host.c */; };
+		533FEF71174ACDAC0016F4DF /* readloop.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF70174ACDAC0016F4DF /* readloop.c */; };
+		533FEF73174AD2DD0016F4DF /* proc.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF72174AD2DD0016F4DF /* proc.c */; };
+		533FEF75174AE0BB0016F4DF /* tv_sub.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF74174AE0BB0016F4DF /* tv_sub.c */; };
+		533FEF77174AE2710016F4DF /* sig_alrm.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF76174AE2710016F4DF /* sig_alrm.c */; };
+		533FEF79174AE39C0016F4DF /* send_to.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF78174AE39C0016F4DF /* send_to.c */; };
+		533FEF7B174AE77B0016F4DF /* in_cksum.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF7A174AE77B0016F4DF /* in_cksum.c */; };
+		533FEF7E174AEFB70016F4DF /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF7C174AEFB70016F4DF /* error.c */; };
+		533FEF7F174AEFB70016F4DF /* host_serv.c in Sources */ = {isa = PBXBuildFile; fileRef = 533FEF7D174AEFB70016F4DF /* host_serv.c */; };
 		53B23FFF174123E400A4B302 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 53B23FFE174123E400A4B302 /* main.c */; };
 		53B24001174123E400A4B302 /* ping.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 53B24000174123E400A4B302 /* ping.1 */; };
 /* End PBXBuildFile section */
@@ -25,9 +34,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		533FEF6D174AC4340016F4DF /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		533FEF6E174AC6D70016F4DF /* sock_ntop_host.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sock_ntop_host.c; sourceTree = "<group>"; };
+		533FEF70174ACDAC0016F4DF /* readloop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = readloop.c; sourceTree = "<group>"; };
+		533FEF72174AD2DD0016F4DF /* proc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = proc.c; sourceTree = "<group>"; };
+		533FEF74174AE0BB0016F4DF /* tv_sub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tv_sub.c; sourceTree = "<group>"; };
+		533FEF76174AE2710016F4DF /* sig_alrm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sig_alrm.c; sourceTree = "<group>"; };
+		533FEF78174AE39C0016F4DF /* send_to.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = send_to.c; sourceTree = "<group>"; };
+		533FEF7A174AE77B0016F4DF /* in_cksum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = in_cksum.c; sourceTree = "<group>"; };
+		533FEF7C174AEFB70016F4DF /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
+		533FEF7D174AEFB70016F4DF /* host_serv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = host_serv.c; sourceTree = "<group>"; };
 		53B23FFB174123E400A4B302 /* ping */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ping; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B23FFE174123E400A4B302 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		53B24000174123E400A4B302 /* ping.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ping.1; sourceTree = "<group>"; };
+		53B24007174123F300A4B302 /* ping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ping.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +80,19 @@
 		53B23FFD174123E400A4B302 /* ping */ = {
 			isa = PBXGroup;
 			children = (
-				53B23FFE174123E400A4B302 /* main.c */,
+				533FEF6D174AC4340016F4DF /* utils.h */,
+				533FEF7C174AEFB70016F4DF /* error.c */,
+				533FEF7D174AEFB70016F4DF /* host_serv.c */,
+				533FEF6E174AC6D70016F4DF /* sock_ntop_host.c */,
 				53B24000174123E400A4B302 /* ping.1 */,
+				533FEF7A174AE77B0016F4DF /* in_cksum.c */,
+				53B24007174123F300A4B302 /* ping.h */,
+				533FEF72174AD2DD0016F4DF /* proc.c */,
+				533FEF76174AE2710016F4DF /* sig_alrm.c */,
+				533FEF74174AE0BB0016F4DF /* tv_sub.c */,
+				533FEF78174AE39C0016F4DF /* send_to.c */,
+				533FEF70174ACDAC0016F4DF /* readloop.c */,
+				53B23FFE174123E400A4B302 /* main.c */,
 			);
 			path = ping;
 			sourceTree = "<group>";
@@ -118,6 +149,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				53B23FFF174123E400A4B302 /* main.c in Sources */,
+				533FEF6F174AC6D70016F4DF /* sock_ntop_host.c in Sources */,
+				533FEF71174ACDAC0016F4DF /* readloop.c in Sources */,
+				533FEF73174AD2DD0016F4DF /* proc.c in Sources */,
+				533FEF75174AE0BB0016F4DF /* tv_sub.c in Sources */,
+				533FEF77174AE2710016F4DF /* sig_alrm.c in Sources */,
+				533FEF79174AE39C0016F4DF /* send_to.c in Sources */,
+				533FEF7B174AE77B0016F4DF /* in_cksum.c in Sources */,
+				533FEF7E174AEFB70016F4DF /* error.c in Sources */,
+				533FEF7F174AEFB70016F4DF /* host_serv.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +254,7 @@
 				53B24006174123E400A4B302 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
