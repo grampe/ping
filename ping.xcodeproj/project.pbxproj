@@ -80,13 +80,13 @@
 		53B23FFD174123E400A4B302 /* ping */ = {
 			isa = PBXGroup;
 			children = (
+				53B24000174123E400A4B302 /* ping.1 */,
 				533FEF6D174AC4340016F4DF /* utils.h */,
+				53B24007174123F300A4B302 /* ping.h */,
 				533FEF7C174AEFB70016F4DF /* error.c */,
 				533FEF7D174AEFB70016F4DF /* host_serv.c */,
 				533FEF6E174AC6D70016F4DF /* sock_ntop_host.c */,
-				53B24000174123E400A4B302 /* ping.1 */,
 				533FEF7A174AE77B0016F4DF /* in_cksum.c */,
-				53B24007174123F300A4B302 /* ping.h */,
 				533FEF72174AD2DD0016F4DF /* proc.c */,
 				533FEF76174AE2710016F4DF /* sig_alrm.c */,
 				533FEF74174AE0BB0016F4DF /* tv_sub.c */,

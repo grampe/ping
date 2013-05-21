@@ -23,6 +23,6 @@ send_to(void)
 	gettimeofday((struct timeval *)icmp->icmp_data, NULL);
 	len = 8 + datalen; // контрольная сумма
 	icmp->icmp_cksum = 0;
-	//icmp->icmp_cksum = in_cksum((u_short *)icmp, len);
+	icmp->icmp_cksum = in_cksum((u_short *)icmp, len);
 	sendto(sockfd, sendbuf, len, 0, pr->sasend, pr->salen);
 }

@@ -17,6 +17,8 @@ int main(int argc, const char * argv[])
 	struct addrinfo *ai;
 	char *h;
 	
+	datalen = 56;
+	
 	pid = getpid() & 0xffff;
 	
 	ai = Host_serv("google.com", NULL, 0, 0);

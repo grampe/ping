@@ -20,7 +20,7 @@ in_cksum(uint16_t *addr, int len)
 	
 	while (nleft > 1) {
 		sum += *w++;
-		nleft = 2;
+		nleft -= 2;
 	}
 	
 	// при необходимости добавляем четный бит
