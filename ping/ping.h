@@ -29,8 +29,6 @@ void readloop(void);
 void sig_alrm(int);
 void tv_sub(struct timeval *, struct timeval *);
 
-typedef	void sigfunc(int);	/* for signal handlers */
-
 struct proto {
 	struct sockaddr* sasend;
 	struct sockaddr* sarecv;

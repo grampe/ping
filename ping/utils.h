@@ -51,6 +51,6 @@ Sock_ntop_host(const struct sockaddr *sa, socklen_t salen);
 // in_cksum
 
 uint16_t
-in_cksum(uint16_t *addr, int len);
+in_cksum(uint16_t *addr, uint16_t len);
 
 #endif

@@ -38,11 +38,14 @@ readloop(void)
 	for ( ; ; ) {
 		msg.msg_namelen = pr->salen;
 		msg.msg_controllen = sizeof(controlbuf);
+		//n = recvfrom(sockfd, recvbuf, BUFFSIZE, 0, (struct sockaddr*)&pr->sarecv, &pr->salen);
 		n = recvmsg(sockfd, &msg, 0);
 		
 		if (n < 0) {
-			if (errno == EINTR)
+			if (errno == EINTR) {
+				printf("%d", errno);
 				continue;
+			}
 			else
 				err_sys("recvmsg");
 		}

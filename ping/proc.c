@@ -35,7 +35,7 @@ proc(char *ptr, ssize_t len, struct msghdr *msg, struct timeval *tvrecv)
 		
 		tvsend = (struct timeval *)icmp->icmp_data;
 		tv_sub(tvrecv, tvsend);
-		rtt = tvrecv->tv_sec * 1000.0 + tvrecv->tv_usec * 1000.0;
+		rtt = tvrecv->tv_sec * 1000.0 + tvrecv->tv_usec / 1000.0;
 		
 		printf("%d bytes from %s: seq=%u, ttl=%d, rtt=%.3f ms\n",
 			   icmplen,

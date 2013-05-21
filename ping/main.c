@@ -13,13 +13,14 @@ struct proto proto_icmp = {NULL, NULL, 0, IPPROTO_ICMP};
 
 int main(int argc, const char * argv[])
 {
-	int c;
 	struct addrinfo *ai;
 	char *h;
 	
 	datalen = 56;
 	
 	pid = getpid() & 0xffff;
+	
+	signal(SIGALRM, sig_alrm);
 	
 	ai = Host_serv("google.com", NULL, 0, 0);
 	h = Sock_ntop_host(ai->ai_addr, ai->ai_addrlen);

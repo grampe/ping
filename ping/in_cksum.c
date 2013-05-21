@@ -9,30 +9,19 @@
 #include "ping.h"
 
 uint16_t
-in_cksum(uint16_t *addr, int len)
+in_cksum(uint16_t *addr, uint16_t len)
 {
-	int nleft = len;
-	uint32_t sum = 0;
-	uint16_t *w = addr;
-	uint16_t answer = 0;
-	
-	/* к 32bit sum добавляем 16bit слова, записываем все биты переноса из старших 16bit в младшие */
-	
-	while (nleft > 1) {
-		sum += *w++;
-		nleft -= 2;
-	}
-	
-	// при необходимости добавляем четный бит
-	
-	if (nleft == 1) {
-		*(unsigned char *)(&answer) = *(unsigned char *)w;
-		sum += answer;
-	}
-	
-	// перемещение битов переноса из старших разрядов в младшие
-	sum = (sum >> 16) + (sum & 0xffff); // добавление старших к младшим
-	sum += (sum >> 16); // добавление преноса
-	answer -= ~sum; // обрезание по 16 разрядам
-	return answer;
+	unsigned long cksum = 0;
+    while (len > 1)
+    {
+        cksum+=*addr++;
+        len -= sizeof(uint16_t);
+    }
+    if (len)
+    {
+		cksum += *(unsigned char*)addr;
+    }
+    cksum = (cksum >> 16) + (cksum & 0xffff);
+    cksum += (cksum >>16);
+    return (uint16_t)(~cksum);
 }
