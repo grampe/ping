@@ -12,6 +12,8 @@ void
 readloop(void)
 {
 	int size;
+	int ttl;
+	
 	char recvbuf[BUFFSIZE];
 	char controlbuf[BUFFSIZE];
 	struct msghdr msg;
@@ -20,10 +22,16 @@ readloop(void)
 	struct timeval tval;
 	
 	sockfd = socket(pr->sasend->sa_family, SOCK_RAW, pr->icmp_proto);
-//	setuid(getuid());
+	setuid(getuid());
+	
+	ttotal = 0;
+	nrecv = 0;
+	nwrecv = 0;
 	
 	size = 60 * 1024;
 	setsockopt(sockfd, SOL_SOCKET, SO_RCVBUF, &size, sizeof(size)); // WTF?!
+	ttl = 12;
+	setsockopt(sockfd, IPPROTO_IP, IP_TTL, &ttl, sizeof(ttl));
 	
 	sig_alrm(SIGALRM);
 	
@@ -35,12 +43,12 @@ readloop(void)
 	msg.msg_iovlen = 1;
 	msg.msg_control = controlbuf;
 	
-	for ( ; ; ) {
+	while (!stop) {
 		msg.msg_namelen = pr->salen;
 		msg.msg_controllen = sizeof(controlbuf);
-		//n = recvfrom(sockfd, recvbuf, BUFFSIZE, 0, (struct sockaddr*)&pr->sarecv, &pr->salen);
 		n = recvmsg(sockfd, &msg, 0);
-		
+		if (stop) break;
+			
 		if (n < 0) {
 			if (errno == EINTR) {
 				printf("%d", errno);

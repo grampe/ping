@@ -14,6 +14,7 @@
 #include <stdarg.h>		/* ANSI C header file */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <unistd.h>
 
 #include <string.h>

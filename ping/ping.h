@@ -17,16 +17,26 @@ char sendbuf[BUFFSIZE];
 
 int datalen; // size of data after ICMP header
 char *host;
-int nsend; // sendto() count
+int nsend; // send_to() count
 pid_t pid; // pid
 int sockfd;
+
 int verbose;
+int waittime;
+
+int nrecv; // recieved count
+int nwrecv; // recieved in wait time count
+float ttotal; // total time
+int twait; // wait time
+
+bool stop;
 
 void proc(char *, ssize_t, struct msghdr *, struct timeval *);
 void send_to(void);
 void readloop(void);
 
 void sig_alrm(int);
+void intHandler(int);
 void tv_sub(struct timeval *, struct timeval *);
 
 struct proto {
